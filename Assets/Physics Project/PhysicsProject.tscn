@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://gh0mtno1a5rq"]
+
+[ext_resource type="Texture2D" uid="uid://dxmaktswjn50y" path="res://Assets/Physics Project/PhysicsCharacter.png" id="1_lxuqw"]
+[ext_resource type="Script" path="res://Assets/Physics Project/PhysicsPlayer.gd" id="1_v6qq8"]
+[ext_resource type="Texture2D" uid="uid://cnn25516xraqs" path="res://Assets/Physics Project/Crate.png" id="3_ebxo3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpaxy"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vajrp"]
+size = Vector2(18, 18)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="RigidBody2D" parent="."]
+mass = 4.0
+gravity_scale = 0.0
+linear_damp = 1.0
+script = ExtResource("1_v6qq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 3
+texture = ExtResource("1_lxuqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_bpaxy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Crates" type="Node" parent="."]
+
+[node name="Crate" type="RigidBody2D" parent="Crates"]
+position = Vector2(-70, -1)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate2" type="RigidBody2D" parent="Crates"]
+position = Vector2(67, 1)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate2"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate2"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate3" type="RigidBody2D" parent="Crates"]
+position = Vector2(-25, 36)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate3"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate3"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate4" type="RigidBody2D" parent="Crates"]
+position = Vector2(-36, -25)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate4"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate4"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate5" type="RigidBody2D" parent="Crates"]
+position = Vector2(-104, -27)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate5"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate5"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate6" type="RigidBody2D" parent="Crates"]
+position = Vector2(44, -75)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate6"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate6"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate7" type="RigidBody2D" parent="Crates"]
+position = Vector2(-57, -94)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate7"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate7"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate8" type="RigidBody2D" parent="Crates"]
+position = Vector2(-120, -84)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate8"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate8"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate9" type="RigidBody2D" parent="Crates"]
+position = Vector2(120, -45)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate9"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate9"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate10" type="RigidBody2D" parent="Crates"]
+position = Vector2(-139, 66)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate10"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate10"]
+shape = SubResource("RectangleShape2D_vajrp")
+
+[node name="Crate11" type="RigidBody2D" parent="Crates"]
+position = Vector2(62, 63)
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="Crates/Crate11"]
+texture = ExtResource("3_ebxo3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crates/Crate11"]
+shape = SubResource("RectangleShape2D_vajrp")

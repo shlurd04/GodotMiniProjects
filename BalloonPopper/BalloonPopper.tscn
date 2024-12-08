@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1n3swrtau22u"]
+
+[ext_resource type="Material" uid="uid://bxn1284nrt47e" path="res://BalloonPopper/Balloon.tres" id="1_0v1uu"]
+[ext_resource type="Script" path="res://BalloonPopper/balloonManager.gd" id="1_3n7y7"]
+[ext_resource type="Script" path="res://BalloonPopper/balloon.gd" id="1_impq8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6fwcv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b467d"]
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("scoreText")]
+script = ExtResource("1_3n7y7")
+scoreText = NodePath("ScoreText")
+
+[node name="Balloon" type="Area3D" parent="."]
+script = ExtResource("1_impq8")
+
+[node name="Model" type="MeshInstance3D" parent="Balloon"]
+material_override = ExtResource("1_0v1uu")
+mesh = SubResource("SphereMesh_6fwcv")
+
+[node name="Collider" type="CollisionShape3D" parent="Balloon"]
+shape = SubResource("SphereShape3D_b467d")
+
+[node name="Balloon2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19803, 0)
+script = ExtResource("1_impq8")
+clicksToPop = 2
+
+[node name="Model" type="MeshInstance3D" parent="Balloon2"]
+material_override = ExtResource("1_0v1uu")
+mesh = SubResource("SphereMesh_6fwcv")
+
+[node name="Collider" type="CollisionShape3D" parent="Balloon2"]
+shape = SubResource("SphereShape3D_b467d")
+
+[node name="Balloon3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23068, 0.429192, 0)
+script = ExtResource("1_impq8")
+clicksToPop = 1
+
+[node name="Model" type="MeshInstance3D" parent="Balloon3"]
+material_override = ExtResource("1_0v1uu")
+mesh = SubResource("SphereMesh_6fwcv")
+
+[node name="Collider" type="CollisionShape3D" parent="Balloon3"]
+shape = SubResource("SphereShape3D_b467d")
+
+[node name="Balloon4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31772, 0.497564, 0)
+script = ExtResource("1_impq8")
+clicksToPop = 4
+
+[node name="Model" type="MeshInstance3D" parent="Balloon4"]
+material_override = ExtResource("1_0v1uu")
+mesh = SubResource("SphereMesh_6fwcv")
+
+[node name="Collider" type="CollisionShape3D" parent="Balloon4"]
+shape = SubResource("SphereShape3D_b467d")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.077091, 0.257264, 3.06216)
+current = true
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.489134, 0.521072, -0.699451, 0.0321764, 0.790605, 0.611481, 0.871615, -0.321602, 0.369946, -3.94359, 2.86138, 1.19824)
+shadow_enabled = true
+
+[node name="ScoreText" type="Label" parent="."]
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 116.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 35
+text = "Score : 0"
+
+[connection signal="input_event" from="Balloon" to="Balloon" method="_on_input_event"]
+[connection signal="input_event" from="Balloon2" to="Balloon2" method="_on_input_event"]
+[connection signal="input_event" from="Balloon3" to="Balloon3" method="_on_input_event"]
+[connection signal="input_event" from="Balloon4" to="Balloon4" method="_on_input_event"]
